@@ -1,6 +1,8 @@
 package Loading;
 
 import Preservation.GameProgress;
+
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -11,8 +13,10 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 public class Main {
+    public static String FILEPATH = "C:/Users/503242115/IdeaProjects/Initial/Games/savegames" + File.separator;
+
     public static void main(String[] args) {
-        List<String> files = openZip("C:/Users/503242115/IdeaProjects/Initial/Games/savegames/zip.zip");
+        List<String> files = openZip(FILEPATH + "zip.zip");
 
         int index = new Random().nextInt(files.size());
         String randomFile = files.get(index);
